@@ -16,7 +16,8 @@ public class LockerRobotTest {
     @Test
     void should_return_1_ticket_and_18_available_when_deposit_1_given_19_available () {
         LockerRobot robot = new LockerRobot();
-        Ticket tickets= robot.deposit();
+        Ticket ticket = robot.deposit();
+        assertNotNull(ticket);
 
         int size = robot.getAvailableCount();
         assertEquals(18, size);
@@ -91,4 +92,18 @@ public class LockerRobotTest {
 
     }
 
+    //Given 可用柜子为19个，When 取包，Then 无包取出
+    @Test
+    void should_return_fail_when_take_by_invalid_ticket_given_19_available() {
+        LockerRobot robot = new LockerRobot();
+        
+        Ticket ticket1 = new Ticket(1);
+        assertFalse(robot.take(ticket1));
+
+        Ticket ticket2 = new Ticket(19);
+        assertFalse(robot.take(ticket2));
+
+        Ticket ticket3 = new Ticket(20);
+        assertFalse(robot.take(ticket3));
+    }
 }
