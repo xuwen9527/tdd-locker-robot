@@ -25,7 +25,7 @@ public class LockerRobot {
         return count;
     }
 
-    public Boolean take(Ticket ticket) {
+    public boolean take(Ticket ticket) {
         if (ticket.getId() <= count) {
             return false;
         }
