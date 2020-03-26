@@ -4,6 +4,6 @@ build/
 out/
 .classpath
 .project
-.settings
-.vscodegit
+.settings/
+.vscode/
 bin/
