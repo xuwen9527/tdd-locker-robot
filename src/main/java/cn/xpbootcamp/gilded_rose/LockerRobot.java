@@ -5,8 +5,7 @@ public class LockerRobot {
     private int current;
 
     public LockerRobot() {
-        count = 19;
-        current = 19;
+        this(19);
     }
 
     public LockerRobot(int count) {
