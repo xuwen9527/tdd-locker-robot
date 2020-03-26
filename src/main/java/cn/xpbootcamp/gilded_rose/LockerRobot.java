@@ -1,7 +1,5 @@
 package cn.xpbootcamp.gilded_rose;
 
-import java.io.ObjectInputStream.GetField;
-
 public class LockerRobot {
     private int count;
     private int current;

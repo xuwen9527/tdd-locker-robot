@@ -2,3 +2,8 @@
 .idea/
 build/
 out/
+.classpath
+.project
+.settings
+.vscodegit
+bin/
