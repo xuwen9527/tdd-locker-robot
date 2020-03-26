@@ -29,7 +29,7 @@ public class LockerRobotTest {
         Ticket ticket1 = robot.deposit();
         Ticket ticket2 = robot.deposit();
 
-        assertNotEquals(ticket1.getId(), ticket2.getId());
+        assertNotEquals(ticket1, ticket2);
 
         int size = robot.getAvailableCount();
         assertEquals(17, size);
