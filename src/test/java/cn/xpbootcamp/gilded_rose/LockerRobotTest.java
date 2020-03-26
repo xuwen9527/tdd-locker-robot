@@ -38,11 +38,12 @@ public class LockerRobotTest {
     @Test
     void should_deposit_fail_when_deposit_1_given_0_available () {
         LockerRobot robot = new LockerRobot();
-        for (int i = 0; i < 19; i++) {
+        int count = robot.getAvailableCount();
+        for (int i = 0; i < count; i++) {
             robot.deposit();
         }
         assertEquals(robot.getAvailableCount(), 0);
-//
+
         Ticket ticket = robot.deposit();
         assertNull(ticket);
     }

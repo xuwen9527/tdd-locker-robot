@@ -1,13 +1,14 @@
 package cn.xpbootcamp.gilded_rose;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LockerRobot {
     private int count;
 
     public LockerRobot() {
         count = 19;
+    }
+
+    public LockerRobot(int count) {
+        this.count = count;
     }
 
     public Ticket deposit() {
