@@ -1,45 +1,35 @@
 package cn.xpbootcamp.gilded_rose;
 
+import java.util.*;
+
 public class LockerRobot {
-    private int count;
-    private int current;
+    Map<Ticket, Bag> _ticker2bag = new HashMap<>();
+    int _capacity = 19;
 
     public LockerRobot() {
         this(19);
     }
 
-    public LockerRobot(int count) {
-        this.count = count;
-        current = count;
+    public LockerRobot(int capacity) {
+        _capacity = capacity;
     }
 
-    public Ticket deposit() {
-        if (current == 0) {
+    public Ticket deposit(Bag bag) {
+        if (_ticker2bag.size() >= _capacity) {
             return null;
         }
 
-        int id = current;
-        current--;
-        return new Ticket(id);
+        Ticket ticket = new Ticket();
+        _ticker2bag.put(ticket, bag);
+        
+        return ticket;
     }
 
-    public int getAvailableCount() {
-        return current;
-    }
-
-    public boolean checkTicket(Ticket ticket) {
+    public Bag take(Ticket ticket) {
         if (ticket == null) {
-            return false;
+            return null;
         }
-        int ticketId = ticket.getId();
-        return ticketId > current && ticketId <= count;
-    }
-
-    public boolean take(Ticket ticket) {
-        if (!checkTicket(ticket)) {
-            return false;
-        }
-        current++;
-        return true;
+        
+        return _ticker2bag.remove(ticket);
     }
 }
