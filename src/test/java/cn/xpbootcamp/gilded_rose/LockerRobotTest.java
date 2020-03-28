@@ -55,7 +55,7 @@ public class LockerRobotTest {
     //Given 可用柜子为18个, When 使用已被使用ticket取包, Then 无包取出
     @Test
     void should_take_fail_when_valid_ticket_and_take_twice_given_18_available () {
-        LockerRobot robot = new LockerRobot();
+        LockerRobot robot = new LockerRobot(19);
 
         Bag bag = new Bag();
         Ticket ticket1 = robot.deposit(bag);
@@ -67,7 +67,7 @@ public class LockerRobotTest {
     //Given 可用柜子为18个, When 使用1个非法ticket取包, Then 无包取出
     @Test
     void should_take_fail_when_invalid_ticket_and_take_once_given_18_available () {
-        LockerRobot robot = new LockerRobot();
+        LockerRobot robot = new LockerRobot(19);
         
         Bag bag = new Bag();
         robot.deposit(bag);

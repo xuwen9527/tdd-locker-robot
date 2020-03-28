@@ -4,11 +4,7 @@ import java.util.*;
 
 public class LockerRobot {
     Map<Ticket, Bag> _ticker2bag = new HashMap<>();
-    int _capacity = 19;
-
-    public LockerRobot() {
-        this(19);
-    }
+    int _capacity = 0;
 
     public LockerRobot(int capacity) {
         _capacity = capacity;
