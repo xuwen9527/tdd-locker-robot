@@ -11,7 +11,7 @@ public class Locker {
     }
 
     public Ticket deposit(Bag bag) {
-        if (storedBags.size() >= _capacity) {
+        if (available() == false) {
             return null;
         }
 
@@ -27,5 +27,9 @@ public class Locker {
         }
         
         return storedBags.remove(ticket);
+    }
+
+    public boolean available() {
+        return storedBags.size() < _capacity;
     }
 }
