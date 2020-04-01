@@ -89,7 +89,7 @@ public class RobotTest {
         assertNull(ticket);
     }
     
-    //取包
+    //take bag case
     @Test
     public void shoule_get_1_original_bag_when_robot_take_bag_with_1_ticket_given_3_lockers_and_each_one_has_10_capacity_and_lockers_has_been_deposit_1_bag() {
         List<Locker> lockers = new ArrayList<>();
