@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 
 public class RobotTest {
-    //#region deposit bag case
+    //deposit bag case
     @Test
     public void should_get_1_ticket_when_robot_deposit_1_bag_given_3_lockers_and_each_one_has_10_capaticy() {
         List<Locker> lockers = new ArrayList<>();
@@ -88,9 +88,8 @@ public class RobotTest {
         Ticket ticket = robot.deposit(new Bag());
         assertNull(ticket);
     }
-    //#endregion
-
-    //#region 取包
+    
+    //取包
     @Test
     public void shoule_get_1_original_bag_when_robot_take_bag_with_1_ticket_given_3_lockers_and_each_one_has_10_capacity_and_lockers_has_been_deposit_1_bag() {
         List<Locker> lockers = new ArrayList<>();
