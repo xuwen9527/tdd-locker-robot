@@ -2,21 +2,21 @@ package cn.xpbootcamp.gilded_rose;
 
 import java.util.*;
 
-public class LockerRobot {
-    Map<Ticket, Bag> _ticker2bag = new HashMap<>();
+public class Locker {
+    Map<Ticket, Bag> storedBags = new HashMap<>();
     int _capacity = 0;
 
-    public LockerRobot(int capacity) {
+    public Locker(int capacity) {
         _capacity = capacity;
     }
 
     public Ticket deposit(Bag bag) {
-        if (_ticker2bag.size() >= _capacity) {
+        if (storedBags.size() >= _capacity) {
             return null;
         }
 
         Ticket ticket = new Ticket();
-        _ticker2bag.put(ticket, bag);
+        storedBags.put(ticket, bag);
         
         return ticket;
     }
@@ -26,6 +26,6 @@ public class LockerRobot {
             return null;
         }
         
-        return _ticker2bag.remove(ticket);
+        return storedBags.remove(ticket);
     }
 }

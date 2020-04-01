@@ -12,10 +12,10 @@ Given 可用柜子为18个, When 使用1个合法ticket取包, Then 对应的包
 Given 可用柜子为18个, When 使用已被使用ticket取包, Then 无包取出
 Given 可用柜子为18个, When 使用1个非法ticket取包, Then 无包取出
 */
-public class LockerRobotTest {
+public class LockerTest {
     @Test
     void should_return_1_ticket_when_deposit_1_bag_given_19_available () {
-        LockerRobot robot = new LockerRobot(19);
+        Locker robot = new Locker(19);
         
         Ticket ticket = robot.deposit(new Bag());
         assertNotNull(ticket);
@@ -23,7 +23,7 @@ public class LockerRobotTest {
 
     @Test
     void should_2_ticket_when_deposit_2_bag_given_19_available () {
-        LockerRobot robot = new LockerRobot(19);
+        Locker robot = new Locker(19);
 
         Ticket ticket1 = robot.deposit(new Bag());
         Ticket ticket2 = robot.deposit(new Bag());
@@ -32,7 +32,7 @@ public class LockerRobotTest {
 
     @Test
     void should_deposit_fail_when_deposit_1_given_0_available () {
-        LockerRobot robot = new LockerRobot(19);
+        Locker robot = new Locker(19);
         for (int i = 0; i < 19; i++) {
             robot.deposit(new Bag());
         }
@@ -44,7 +44,7 @@ public class LockerRobotTest {
     //Given 可用柜子为18个, When 使用1个合法ticket取包, Then 对应的包被取出，可用柜19个
     @Test
     void should_take_successfully_19_available_when_valid_ticket_and_take_once_given_18_available () {
-        LockerRobot robot = new LockerRobot(19);
+        Locker robot = new Locker(19);
 
         Bag bag = new Bag();
         Ticket ticket = robot.deposit(bag);
@@ -55,7 +55,7 @@ public class LockerRobotTest {
     //Given 可用柜子为18个, When 使用已被使用ticket取包, Then 无包取出
     @Test
     void should_take_fail_when_valid_ticket_and_take_twice_given_18_available () {
-        LockerRobot robot = new LockerRobot(19);
+        Locker robot = new Locker(19);
 
         Bag bag = new Bag();
         Ticket ticket1 = robot.deposit(bag);
@@ -67,7 +67,7 @@ public class LockerRobotTest {
     //Given 可用柜子为18个, When 使用1个非法ticket取包, Then 无包取出
     @Test
     void should_take_fail_when_invalid_ticket_and_take_once_given_18_available () {
-        LockerRobot robot = new LockerRobot(19);
+        Locker robot = new Locker(19);
         
         Bag bag = new Bag();
         robot.deposit(bag);
