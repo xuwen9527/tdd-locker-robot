@@ -37,7 +37,7 @@ public class RobotTest {
     }
     
     @Test
-    public void should_get_11_tickets_when_robot_deposit_11_bags_given_3_lockers_and_each_one_has_10_capaticy() {
+    public void should_get_11_tickets_and_first_locker_has_10_bags_and_second_locker_has_1_bag_when_robot_deposit_11_bags_given_3_lockers_and_each_one_has_10_capaticy() {
         List<Locker> lockers = new ArrayList<>();
         lockers.add(new Locker(10));
         lockers.add(new Locker(10));
@@ -47,10 +47,12 @@ public class RobotTest {
         int ticketCount = 0;
         for (int i = 0; i < 11; ++i) {
             robot.deposit(new Bag());
-            robot.deposit(new Bag());
             ++ticketCount;
         }
         assertEquals(11, ticketCount);
+
+        assertEquals(10, lockers.get(0).countOfBags());
+        assertEquals(1, lockers.get(1).countOfBags());
     }
 
     @Test
@@ -140,6 +142,22 @@ public class RobotTest {
 
         Ticket ticket = new Ticket();
         Bag bag = robot.take(ticket);
+        assertNull(bag);
+    }
+
+    @Test
+    public void shoule_get_bag_fail_when_robot_take_bag_with_1_used_ticket_given_3_lockers_and_each_one_has_10_capacity_and_lockers_have_been_deposit_1_bag() {
+        List<Locker> lockers = new ArrayList<>();
+        lockers.add(new Locker(10));
+        lockers.add(new Locker(10));
+        lockers.add(new Locker(10));
+
+        Robot robot = new Robot(lockers);
+        Ticket ticket = robot.deposit(new Bag());
+        
+        robot.take(ticket);
+        Bag bag = robot.take(ticket);
+
         assertNull(bag);
     }
     //#endregion

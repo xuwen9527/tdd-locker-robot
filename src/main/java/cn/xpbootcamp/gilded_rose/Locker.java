@@ -32,4 +32,8 @@ public class Locker {
     public boolean available() {
         return storedBags.size() < _capacity;
     }
+
+    public int countOfBags() {
+        return storedBags.size();
+    }
 }
