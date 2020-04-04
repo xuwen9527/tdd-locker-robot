@@ -93,7 +93,7 @@ public class RobotTest {
     
     //take bag case
     @Test
-    public void shoule_get_1_original_bag_when_robot_take_bag_with_1_ticket_given_3_lockers_and_each_one_has_10_capacity_and_lockers_has_been_deposit_1_bag() {
+    public void should_get_1_original_bag_when_robot_take_bag_with_1_ticket_given_3_lockers_and_each_one_has_10_capacity_and_lockers_has_been_deposit_1_bag() {
         List<Locker> lockers = new ArrayList<>();
         lockers.add(new Locker(10));
         lockers.add(new Locker(10));
@@ -108,7 +108,7 @@ public class RobotTest {
     }
 
     @Test
-    public void shoule_get_11_bags_when_robot_take_bag_with_11_tickets_given_3_lockers_and_each_one_has_10_capacity_and_lockers_has_been_deposit_11_bags() {
+    public void should_get_11_bags_when_robot_take_bag_with_11_tickets_given_3_lockers_and_each_one_has_10_capacity_and_lockers_has_been_deposit_11_bags() {
         List<Locker> lockers = new ArrayList<>();
         lockers.add(new Locker(10));
         lockers.add(new Locker(10));
@@ -131,7 +131,7 @@ public class RobotTest {
     }
 
     @Test
-    public void shoule_get_bag_fail_when_robot_take_bag_with_1_invalid_ticket_given_3_lockers_and_each_one_has_10_capacity_and_lockers_have_been_deposit_1_bag() {
+    public void should_get_bag_fail_when_robot_take_bag_with_1_invalid_ticket_given_3_lockers_and_each_one_has_10_capacity_and_lockers_have_been_deposit_1_bag() {
         List<Locker> lockers = new ArrayList<>();
         lockers.add(new Locker(10));
         lockers.add(new Locker(10));
@@ -146,7 +146,7 @@ public class RobotTest {
     }
 
     @Test
-    public void shoule_get_bag_fail_when_robot_take_bag_with_1_used_ticket_given_3_lockers_and_each_one_has_10_capacity_and_lockers_have_been_deposit_1_bag() {
+    public void should_get_bag_fail_when_robot_take_bag_with_1_used_ticket_given_3_lockers_and_each_one_has_10_capacity_and_lockers_have_been_deposit_1_bag() {
         List<Locker> lockers = new ArrayList<>();
         lockers.add(new Locker(10));
         lockers.add(new Locker(10));
