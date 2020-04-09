@@ -50,9 +50,6 @@ public class RobotTest {
             ++ticketCount;
         }
         assertEquals(11, ticketCount);
-
-        assertEquals(10, lockers.get(0).countOfBags());
-        assertEquals(1, lockers.get(1).countOfBags());
     }
 
     @Test
@@ -160,5 +157,4 @@ public class RobotTest {
 
         assertNull(bag);
     }
-    //#endregion
 }

@@ -11,11 +11,22 @@ public class Robot {
     }
 
     public Ticket deposit(Bag bag) {
+        Locker max_locker = null;
+        int max_available_count = 0;
+
         for (Locker locker : _lockers) {
-            if (locker.available())
-                return locker.deposit(bag);
+            int available_count = locker.availableCount();
+            if (available_count > max_available_count) {
+                max_available_count = available_count;
+                max_locker = locker;
+                break;
+            }
         }
-        return null;
+
+        if (max_locker == null)
+            return null;
+
+        return max_locker.deposit(bag);
     }
 
     public Bag take(Ticket ticket) {
