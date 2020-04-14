@@ -19,7 +19,6 @@ public class Robot {
             if (available_count > max_available_count) {
                 max_available_count = available_count;
                 max_locker = locker;
-                break;
             }
         }
 
